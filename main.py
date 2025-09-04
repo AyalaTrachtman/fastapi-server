@@ -1,0 +1,12 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+async def read_root():
+    return {"message": "Hello, World!"}
+
+@app.get("/sum")
+async def sum_numbers(a: int, b:int):
+    return {"a": a, "b": b, "sum": a + b}
